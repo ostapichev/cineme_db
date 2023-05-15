@@ -3,12 +3,11 @@ import {IGenre, IMovie} from "../../interfaces";
 
 interface IState {
     movies: IMovie[];
-    genres: IGenre[];
+
 }
 
 const initialState: IState = {
     movies: [],
-    genres: []
 };
 
 const slice = createSlice({
@@ -17,14 +16,22 @@ const slice = createSlice({
     reducers: {
         getMovie: (state, action) => {
             state.movies = action.payload;
-        },
-        getGenre: (state, action) => {
-            state.genres = action.payload;
         }
     }
 });
 
-export const {getMovie, getGenre} = slice.actions;
+const {reducer: movieReducer, actions} = slice;
+
+const moviesAction = {
+    ...actions
+}
+
+export {
+    movieReducer,
+    moviesAction
+}
+
+export const {getMovie} = slice.actions;
 
 export default slice.reducer;
 

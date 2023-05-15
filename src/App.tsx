@@ -6,7 +6,7 @@ import {getMovie} from "./redux/slices";
 
 function App() {
     const dispatch = useAppDispatch();
-    const {movies} = useAppSelector((state) => state.movie);
+    const {movies} = useAppSelector((state) => state.movieReducer);
     console.log(movies);
     useEffect(() => {
         axios.request(options)
