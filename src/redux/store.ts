@@ -9,5 +9,14 @@ const setupStore = configureStore({
     reducer: rootReducer
 });
 
-export type RootState = ReturnType<typeof setupStore.getState>;
-export type AppDispatch = typeof setupStore.dispatch;
+type RootState = ReturnType<typeof setupStore.getState>;
+type AppDispatch = typeof setupStore.dispatch;
+
+export type {
+    RootState,
+    AppDispatch
+};
+
+export {
+    setupStore
+};

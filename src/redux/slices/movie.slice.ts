@@ -1,9 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {IGenre, IMovie} from "../../interfaces";
+import {IMovie} from "../../interfaces";
 
 interface IState {
     movies: IMovie[];
-
 }
 
 const initialState: IState = {
@@ -24,16 +23,12 @@ const {reducer: movieReducer, actions} = slice;
 
 const moviesAction = {
     ...actions
-}
+};
 
 export {
     movieReducer,
     moviesAction
-}
-
-export const {getMovie} = slice.actions;
-
-export default slice.reducer;
+};
 
 
 

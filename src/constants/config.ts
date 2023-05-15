@@ -1,9 +1,9 @@
-import {baseURL, movieURL} from "./urls";
+import {baseURL} from "./urls";
 import {TOKEN_API} from "./token";
 
 const options = {
     method: 'GET',
-    url:  baseURL + movieURL,
+    url:  baseURL,
     params: {
         include_adult: 'false',
         include_video: 'false',
