@@ -1,13 +1,8 @@
 import axios from "axios";
-import {options} from "../constants";
+import {baseURL} from "../constants";
 
-const axiosService = axios.request(options)
-    .then((response) => {
-        console.log(response.data);
-    })
-    .catch((error) => {
-        console.error(error);
-    });
+const axiosService = axios.create({baseURL})
+
 
 export {
     axiosService

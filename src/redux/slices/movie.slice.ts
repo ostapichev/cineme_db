@@ -3,18 +3,23 @@ import {IMovie} from "../../interfaces";
 
 interface IState {
     movies: IMovie[];
+    prevPage: null;
+    nextPage: null;
 }
 
 const initialState: IState = {
     movies: [],
+    prevPage: null,
+    nextPage: null
 };
 
 const slice = createSlice({
     name: 'movieSlice',
     initialState,
     reducers: {
-        getMovie: (state, action) => {
-            state.movies = action.payload;
+        setMovies: (state, action) => {
+            const {results, page} = action.payload;
+            state.movies = results;
         }
     }
 });
