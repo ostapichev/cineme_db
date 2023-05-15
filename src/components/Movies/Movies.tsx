@@ -1,17 +1,15 @@
-import React, {FC, useEffect} from 'react';
+import {FC, useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {urls, options, baseURL} from "../../constants";
-import axios from "axios";
 import {moviesAction} from "../../redux/slices";
 import {Movie} from "../Movie/Movie";
+import {movieService} from "../../services";
 
 const Movies: FC = () => {
     const dispatch = useAppDispatch();
     const {movies} = useAppSelector((state) => state.movieReducer);
-    options.url = baseURL + urls.movieURL;
     console.log(movies);
     useEffect(() => {
-        axios.request(options)
+        movieService.getAll()
             .then((response) => {
                 dispatch(moviesAction.setMovies(response.data));
             })
