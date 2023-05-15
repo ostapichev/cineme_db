@@ -1,8 +1,5 @@
 import {axiosService} from "./axios.service";
-import {baseURL, options, urls} from "../constants";
-
-
-options.url = baseURL + urls.genreURL;
+import {options} from "../constants";
 
 const genreService = {
     getAll: () => axiosService.request(options)

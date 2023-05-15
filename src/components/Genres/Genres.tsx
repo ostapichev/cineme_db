@@ -3,11 +3,13 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genreActions} from "../../redux/slices";
 import {genreService} from "../../services";
 import {Genre} from "../Genre/Genre";
+import {baseURL, options, urls} from "../../constants";
 
 const Genres: FC = () => {
     const dispatch = useAppDispatch();
     const {genres} = useAppSelector((state) => state.genreReducer);
     console.log(genres);
+    options.url = baseURL + urls.genreURL;
     useEffect(() => {
         genreService.getAll()
             .then((response) => {
