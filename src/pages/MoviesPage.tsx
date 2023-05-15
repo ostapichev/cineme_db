@@ -1,9 +1,10 @@
 import {FC} from 'react';
+import {Movies} from "../components";
 
 const MoviesPage: FC = () => {
     return (
         <div>
-            MoviesPage
+            <Movies/>
         </div>
     );
 };
