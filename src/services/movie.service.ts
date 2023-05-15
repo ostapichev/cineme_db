@@ -7,6 +7,8 @@ const movieService = {
     getAll: () => axiosService.request(options)
 }
 
+console.log(options.url);
+
 export {
     movieService
 };

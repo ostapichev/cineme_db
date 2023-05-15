@@ -1,8 +1,8 @@
 import {FC, useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {moviesAction} from "../../redux/slices";
-import {Movie} from "../Movie/Movie";
 import {movieService} from "../../services";
+import {Movie} from "../Movie/Movie";
 
 const Movies: FC = () => {
     const dispatch = useAppDispatch();
@@ -17,6 +17,7 @@ const Movies: FC = () => {
                 console.error(error);
             });
     }, [dispatch]);
+
     return (
         <div>
             Movies

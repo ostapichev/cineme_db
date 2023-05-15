@@ -11,7 +11,7 @@ const Genres: FC = () => {
     useEffect(() => {
         genreService.getAll()
             .then((response) => {
-                dispatch(genreActions.setMovies(response.data));
+                dispatch(genreActions.setGenres(response.data));
             })
             .catch((error) => {
                 console.error(error);
