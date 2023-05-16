@@ -1,5 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
+
 import {IGenre} from "../../interfaces";
+
 
 interface IState {
     genres: IGenre[];
@@ -8,7 +10,6 @@ interface IState {
 const initialState: IState = {
     genres: [],
 };
-
 const slice = createSlice({
     name: 'genreSlice',
     initialState,
@@ -19,9 +20,7 @@ const slice = createSlice({
         }
     }
 });
-
 const {reducer: genreReducer, actions} = slice;
-
 const genreActions = {
     ...actions
 };

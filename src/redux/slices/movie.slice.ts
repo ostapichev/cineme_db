@@ -1,5 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
+
 import {IMovie} from "../../interfaces";
+
 
 interface IState {
     movies: IMovie[];
@@ -14,13 +16,12 @@ const initialState: IState = {
     nextPage: true,
     page: 1
 };
-
 const slice = createSlice({
     name: 'movieSlice',
     initialState,
     reducers: {
         setMovies: (state, action) => {
-            const {page, results, prevPage} = action.payload;
+            const {page, results} = action.payload;
             state.movies = results;
             state.page = page;
             switch (page) {
@@ -35,11 +36,9 @@ const slice = createSlice({
                     state.nextPage = true;
             }
         },
-    }
+    },
 });
-
 const {reducer: movieReducer, actions} = slice;
-
 const moviesAction = {
     ...actions
 };

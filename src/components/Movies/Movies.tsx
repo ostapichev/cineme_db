@@ -1,17 +1,19 @@
 import {FC, useEffect} from 'react';
+import {useSearchParams} from "react-router-dom";
+
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {moviesAction} from "../../redux/slices";
 import {movieService} from "../../services";
 import {Movie} from "../Movie/Movie";
-import {baseURL, options, urls} from "../../constants";
-import {useSearchParams} from "react-router-dom";
+import {setURLS, urls} from "../../constants";
+
 
 const Movies: FC = () => {
     const dispatch = useAppDispatch();
     const {movies} = useAppSelector((state) => state.movieReducer);
     const [query, setQuery] = useSearchParams();
-    console.log(movies);
-    options.url = baseURL + urls.movieURL;
+
+    setURLS(urls.movieURL);
     useEffect(() => {
         setQuery( prev => ({...prev, page: '1'}));
     }, []);

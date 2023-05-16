@@ -1,11 +1,15 @@
 import {FC} from 'react';
+
 import {IMovie} from "../../interfaces";
+
 
 interface IProps {
     movie: IMovie
 }
+
 const Movie: FC<IProps> = ({movie}) => {
     const {id, original_title, genre_ids} = movie;
+
     return (
         <div>
             <div>id: {id}</div>
