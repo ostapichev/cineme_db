@@ -1,18 +1,23 @@
 import {FC} from 'react';
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {moviesAction} from "../../redux/slices";
+import {movieReducer, moviesAction} from "../../redux/slices";
 import {options} from "../../constants";
 import {useSearchParams} from "react-router-dom";
 
 const Pagination: FC = () => {
-    const {prevPage, nextPage} = useAppSelector(state => state.movieReducer);
+    const dispatch = useAppDispatch();
+    const {prevPage, nextPage, page} = useAppSelector(state => state.movieReducer);
     const [, setQuery] = useSearchParams();
     const prev = () => {
         setQuery(prevContent => ({...prevContent, page: +prevContent.get('page')-1}));
+        dispatch(moviesAction.decPage());
+        options.params.page = String(page);
         console.log('hello prev');
     }
     const next = () => {
         setQuery(prevContent => ({...prevContent, page: +prevContent.get('page')+1}));
+        dispatch(moviesAction.incPage());
+        options.params.page = String(page);
         console.log('hello next');
     }
 
