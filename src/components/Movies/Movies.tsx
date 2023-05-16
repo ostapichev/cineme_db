@@ -6,6 +6,7 @@ import {moviesAction} from "../../redux/slices";
 import {movieService} from "../../services";
 import {Movie} from "../Movie/Movie";
 import {setURLS, urls} from "../../constants";
+import {Search} from "../Search/Search";
 
 
 const Movies: FC = () => {
@@ -17,7 +18,6 @@ const Movies: FC = () => {
     useEffect(() => {
         setQuery( prev => ({...prev, page: '1'}));
     }, []);
-
     useEffect(() => {
         movieService.getAll(+query.get('page'))
             .then(response => response.data)
@@ -27,6 +27,7 @@ const Movies: FC = () => {
     return (
         <div>
             Movies
+            <Search/>
             {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
         </div>
     );

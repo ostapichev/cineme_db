@@ -10,7 +10,6 @@ const Pagination: FC = () => {
     const dispatch = useAppDispatch();
     const {prevPage, nextPage, page} = useAppSelector(state => state.movieReducer);
     const [, setQuery] = useSearchParams();
-
     const prev = () => {
         setQuery(prevContent => ({...prevContent, page: +prevContent.get('page')-1}));
         dispatch(moviesAction.setMovies);
