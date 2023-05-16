@@ -12,7 +12,7 @@ const initialState: IState = {
     movies: [],
     prevPage: false,
     nextPage: true,
-    page: 2
+    page: 1
 };
 
 const slice = createSlice({
@@ -20,12 +20,11 @@ const slice = createSlice({
     initialState,
     reducers: {
         setMovies: (state, action) => {
-            const {page, results} = action.payload;
+            const {page, results, prevPage} = action.payload;
             state.movies = results;
-            state.prevPage = false;
+            state.page = page;
             switch (page) {
                 case 1:
-                    console.log(page);
                     state.prevPage = false;
                     break;
                 case 500:
@@ -36,12 +35,6 @@ const slice = createSlice({
                     state.nextPage = true;
             }
         },
-        decPage: state => {
-            state.page -= 1;
-        },
-        incPage: state => {
-            state.page += 1;
-        }
     }
 });
 

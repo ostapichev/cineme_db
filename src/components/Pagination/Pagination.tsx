@@ -10,14 +10,16 @@ const Pagination: FC = () => {
     const [, setQuery] = useSearchParams();
     const prev = () => {
         setQuery(prevContent => ({...prevContent, page: +prevContent.get('page')-1}));
-        dispatch(moviesAction.decPage());
-        options.params.page = String(page);
+        dispatch(moviesAction.setMovies);
+        console.log(page);
+        options.params.page = String(page - 1);
         console.log('hello prev');
     }
     const next = () => {
         setQuery(prevContent => ({...prevContent, page: +prevContent.get('page')+1}));
-        dispatch(moviesAction.incPage());
-        options.params.page = String(page);
+        dispatch(moviesAction.setMovies);
+        console.log(page);
+        options.params.page = String(page + 1);
         console.log('hello next');
     }
 
