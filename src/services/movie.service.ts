@@ -1,10 +1,9 @@
 import {axiosService} from "./axios.service";
-import {baseURL, options, urls} from "../constants";
+import {options} from "../constants";
 
 const movieService = {
-    getAll: () => axiosService.request(options)
+    getAll: (page = 1) => axiosService.request(options)
 }
-console.log(options);
 
 export {
     movieService

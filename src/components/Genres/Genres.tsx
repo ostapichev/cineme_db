@@ -12,14 +12,9 @@ const Genres: FC = () => {
     options.url = baseURL + urls.genreURL;
     useEffect(() => {
         genreService.getAll()
-            .then((response) => {
-                dispatch(genreActions.setGenres(response.data));
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, [dispatch]);
-
+            .then(response => response.data)
+            .then(response => dispatch(genreActions.setGenres(response))
+            )}, []);
     return (
         <div>
             Genres

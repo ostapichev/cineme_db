@@ -3,14 +3,14 @@ import {IMovie} from "../../interfaces";
 
 interface IState {
     movies: IMovie[];
-    prevPage: null;
-    nextPage: null;
+    prevPage: number;
+    nextPage: number;
 }
 
 const initialState: IState = {
     movies: [],
-    prevPage: null,
-    nextPage: null
+    prevPage: 0,
+    nextPage: 0
 };
 
 const slice = createSlice({
@@ -18,9 +18,11 @@ const slice = createSlice({
     initialState,
     reducers: {
         setMovies: (state, action) => {
-            const {results, page} = action.payload;
+            const {page, results} = action.payload;
             state.movies = results;
-        }
+            state.prevPage = page;
+            state.nextPage = page;
+        },
     }
 });
 

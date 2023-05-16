@@ -4,21 +4,23 @@ import {moviesAction} from "../../redux/slices";
 import {movieService} from "../../services";
 import {Movie} from "../Movie/Movie";
 import {baseURL, options, urls} from "../../constants";
+import {useSearchParams} from "react-router-dom";
 
 const Movies: FC = () => {
     const dispatch = useAppDispatch();
     const {movies} = useAppSelector((state) => state.movieReducer);
+    const [query, setQuery] = useSearchParams();
     console.log(movies);
     options.url = baseURL + urls.movieURL;
     useEffect(() => {
-        movieService.getAll()
-            .then((response) => {
-                dispatch(moviesAction.setMovies(response.data));
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, [dispatch]);
+        setQuery( prev => ({...prev, page: '1'}));
+    }, []);
+
+    useEffect(() => {
+        movieService.getAll(+query.get('page'))
+            .then(response => response.data)
+            .then(response => dispatch(moviesAction.setMovies(response))
+            )}, [query, dispatch]);
 
     return (
         <div>
