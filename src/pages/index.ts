@@ -1,3 +1,4 @@
-export * from './MoviesPage';
-export * from './GenresPage';
-export * from './HomePage';
+export * from './MoviePage/MoviesPage';
+export * from './GenrePage/GenresPage';
+export * from './HomePage/HomePage';
+export * from './ProfilePage/ProfilePage';

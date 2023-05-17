@@ -1,26 +1,31 @@
-import React, {FC, useEffect} from 'react';
+import {FC, useEffect} from 'react';
+import {useSearchParams} from "react-router-dom";
+
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {movieURL, options} from "../../constants";
-import axios from "axios";
 import {moviesAction} from "../../redux/slices";
+import {movieService} from "../../services";
 import {Movie} from "../Movie/Movie";
+import {setURLS, urls} from "../../constants";
+
 
 const Movies: FC = () => {
     const dispatch = useAppDispatch();
     const {movies} = useAppSelector((state) => state.movieReducer);
-    options.url = options.url + movieURL;
-    console.log(movies);
+    const [query, setQuery] = useSearchParams();
+
+    setURLS(urls.movieURL);
     useEffect(() => {
-        axios.request(options)
-            .then((response) => {
-                dispatch(moviesAction.getMovie(response.data));
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, [dispatch]);
+        setQuery( prev => ({...prev, page: '1'}));
+    }, []);
+    useEffect(() => {
+        movieService.getAll(+query.get('page'))
+            .then(response => response.data)
+            .then(response => dispatch(moviesAction.setMovies(response))
+            )}, [query, dispatch]);
+
     return (
         <div>
+            Movies
             {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
         </div>
     );
