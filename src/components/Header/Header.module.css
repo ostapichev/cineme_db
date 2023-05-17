@@ -1,0 +1,55 @@
+.Header {
+    background: linear-gradient(90deg, red, #f1a4b5, #d587b3);
+    font-size: 30px;
+    color: snow;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;;
+}
+
+.Header a {
+    text-decoration: none;
+    color: snow;
+    padding: 0 30px;
+    transition: transform 0.3s;
+}
+
+.Header a[class='active'] {
+    color: bisque;
+    transform: scale(1.3);
+}
+
+.Login {
+    margin-left: 500px;
+    width: 160px;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 25px;
+    background-color: darkseagreen;
+}
+
+.Header .LoginLink {
+    display: flex;
+    padding: 0;
+}
+
+.Avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.NickName {
+    margin: 10px 10px;
+    font-size: 16px;
+}
+
+a:hover {
+    color: burlywood;
+}
+
+.LoginLink:hover {
+    background-color: forestgreen;
+    border-radius: 25px;
+}

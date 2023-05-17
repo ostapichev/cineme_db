@@ -1,0 +1,37 @@
+.Search {
+    text-align: center;
+    width: 50%;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    right: 50px;
+}
+
+.SearchInput {
+    width: 50%;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+    border-radius: 15px 0 0 15px;
+}
+
+.SearchButton {
+    font-size: 16px;
+    color: snow;
+    background-color: deepskyblue;
+    height: 40px;
+    width: 20%;
+    border-radius: 0 15px 15px 0;
+    overflow-x: hidden;
+}
+
+.SearchInput[placeholder] {
+    padding-left: 10px;
+}
+
+.SearchButton:hover {
+    color: burlywood;
+    transform: scale(1.1);
+}
+
+

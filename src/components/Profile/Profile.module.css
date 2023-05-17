@@ -1,0 +1,13 @@
+.MainText {
+    text-align: center;
+}
+
+.BlockData {
+    display: flex;
+}
+
+.AvatarLogo {
+    width: 200px;
+    height: 200px;
+}
+
