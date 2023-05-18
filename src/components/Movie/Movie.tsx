@@ -8,13 +8,13 @@ interface IProps {
 }
 
 const Movie: FC<IProps> = ({movie}) => {
-    const {id, original_title, genre_ids} = movie;
+    const {id, title, genre_ids} = movie;
 
     return (
         <div>
-            <div>id: {id}</div>
-            <div>original_title: {original_title}</div>
+            <div>title: {title}</div>
             <div>genre_ids: {genre_ids}</div>
+            <img></img>
         </div>
     );
 };
