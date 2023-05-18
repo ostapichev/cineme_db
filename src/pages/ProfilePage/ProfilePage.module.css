@@ -1,0 +1,7 @@
+.ProfileComponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(342deg, rgba(2,0,36,0.9051995798319328) 0%, rgba(9,56,121,1) 33%, rgba(68,0,255,1) 100%);
+    height: 100vh;
+}

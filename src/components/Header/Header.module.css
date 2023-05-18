@@ -1,55 +1,60 @@
 .Header {
-    background: linear-gradient(90deg, red, #f1a4b5, #d587b3);
-    font-size: 30px;
-    color: snow;
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
-    height: 60px;;
+    background: linear-gradient(90deg, red, #f1a4b5, #d587b3);
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
 }
 
-.Header a {
-    text-decoration: none;
+.Nav {
+    align-items: center;
+    color: snow;
+    display: flex;
+    height: 60px;
+    justify-content: flex-start;
+}
+
+.Nav a {
     color: snow;
     padding: 0 30px;
+    text-decoration: none;
     transition: transform 0.3s;
 }
 
-.Header a[class='active'] {
+.Nav a[class='active'] {
     color: bisque;
     transform: scale(1.3);
 }
 
 .Login {
-    margin-left: 500px;
-    width: 160px;
-    height: 50px;
+    background-color: darkseagreen;
     border: 1px solid gray;
     border-radius: 25px;
-    background-color: darkseagreen;
-}
-
-.Header .LoginLink {
+    color: snow;
     display: flex;
+    margin-right: 50px;
+    height: 50px;
     padding: 0;
+    text-decoration: none;
+    width: 160px;
 }
 
 .Avatar {
-    width: 50px;
-    height: 50px;
     border-radius: 25px;
+    height: 50px;
+    width: 50px;
 }
 
 .NickName {
-    margin: 10px 10px;
     font-size: 16px;
+    margin: 10px 10px;
 }
 
 a:hover {
     color: burlywood;
 }
 
-.LoginLink:hover {
+.Login:hover {
     background-color: forestgreen;
     border-radius: 25px;
 }

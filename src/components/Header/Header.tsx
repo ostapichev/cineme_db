@@ -9,15 +9,15 @@ const Header: FC = () => {
 
     return (
         <div className={css.Header}>
-            <NavLink to={'home'}>Home</NavLink>
-            <NavLink to={'movies'}>Movies</NavLink>
-            <NavLink to={'genres'}>Genres</NavLink>
-            <div className={css.Login}>
-                <NavLink to={'profile'} className={css.LoginLink}>
+            <div className={css.Nav}>
+                <NavLink to={'home'}>Home</NavLink>
+                <NavLink to={'movies'}>Movies</NavLink>
+                <NavLink to={'genres'}>Genres</NavLink>
+            </div>
+                <NavLink to={'profile'} className={css.Login}>
                     <img className={css.Avatar} src={charlie} alt='Charlie Chaplin'/>
                     <p className={css.NickName}>Movie_man</p>
                 </NavLink>
-            </div>
         </div>
     );
 };

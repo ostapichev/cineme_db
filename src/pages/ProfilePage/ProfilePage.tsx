@@ -1,12 +1,13 @@
 import{FC} from 'react';
 
 import {Profile} from "../../components";
+import css from './ProfilePage.module.css';
 
 
 const ProfilePage: FC = () => {
 
     return (
-        <div>
+        <div className={css.ProfileComponent}>
             <Profile/>
         </div>
     );

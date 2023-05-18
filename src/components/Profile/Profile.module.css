@@ -1,13 +1,61 @@
+.ProfileContainer {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(110,110,110);
+    background: linear-gradient(289deg, rgba(110,110,110,1) 0%, rgba(110,110,110,1) 30%, rgba(0,0,0,1) 100%);
+    color: bisque;
+}
+
 .MainText {
     text-align: center;
 }
 
 .BlockData {
     display: flex;
+    justify-content: center;
 }
 
 .AvatarLogo {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
+
+.ButtonProfile {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 50px;
+    background-color: bisque;
+    font: 1.2em 'Gill Sans', sans-serif;
+    color: red;
+}
+
+.DataUser, .DataUserField {
+    font-size: 2em;
+}
+
+.Data, .DataField {
+    display: block;
+}
+
+ .Data {
+     margin-top: 1px;
+ }
+
+.DataField {
+    border: 1px solid gray;
+    font: 1em 'Courier New', monospace;
+}
+
+.ButtonProfile:hover {
+    background-color: red;
+    color: bisque;
+}
+
+
 
