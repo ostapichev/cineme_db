@@ -14,10 +14,10 @@ const Header: FC = () => {
                 <NavLink to={'movies'}>Movies</NavLink>
                 <NavLink to={'genres'}>Genres</NavLink>
             </div>
-                <NavLink to={'profile'} className={css.Login}>
-                    <img className={css.Avatar} src={charlie} alt='Charlie Chaplin'/>
-                    <p className={css.NickName}>Movie_man</p>
-                </NavLink>
+            <NavLink to={'profile'} className={css.Login}>
+                <img className={css.Avatar} src={charlie} alt='Charlie Chaplin'/>
+                <p className={css.NickName}>Movie_man</p>
+            </NavLink>
         </div>
     );
 };
