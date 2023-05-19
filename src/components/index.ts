@@ -6,3 +6,4 @@ export * from './Pagination/Pagination';
 export * from './Search/Search';
 export * from './Profile/Profile';
 export * from './Poster/Poster';
+export * from './Rating/Rating';

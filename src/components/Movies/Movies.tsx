@@ -6,6 +6,7 @@ import {moviesAction} from "../../redux/slices";
 import {movieService} from "../../services";
 import {Movie} from "../Movie/Movie";
 import {setURLS, urls} from "../../constants";
+import css from './Movies.module.css';
 
 
 const Movies: FC = () => {
@@ -22,12 +23,12 @@ const Movies: FC = () => {
             .then(response => response.data)
             .then(response => dispatch(moviesAction.setMovies(response))
             )}, [query, dispatch]);
-    console.log(movies);
 
     return (
-        <div>
-            Movies
-            {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
+        <div className={css.MovieCards}>
+            {
+                movies.map(movie => <Movie key={movie.id} movie={movie}/>)
+            }
         </div>
     );
 };

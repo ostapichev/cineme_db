@@ -1,6 +1,7 @@
 .Header {
     align-items: center;
-    background: linear-gradient(90deg, red, #f1a4b5, #d587b3);
+    background: rgb(110,110,110);
+    background: linear-gradient(172deg, rgba(110,110,110,1) 0%, rgba(182,35,75,1) 17%);
     display: flex;
     font-size: 30px;
     justify-content: space-between;
@@ -58,3 +59,4 @@ a:hover {
     background-color: forestgreen;
     border-radius: 25px;
 }
+

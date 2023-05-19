@@ -1,8 +1,9 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 
 import {IMovie} from "../../interfaces";
 import {Poster} from "../Poster/Poster";
-
+import {Rating} from "../Rating/Rating";
+import css from './Movie.module.css';
 
 
 interface IProps {
@@ -10,14 +11,16 @@ interface IProps {
 }
 
 const Movie: FC<IProps> = ({movie}) => {
-    const {id, title, genre_ids, poster_path} = movie;
-    console.log(poster_path);
+    const {id, title, release_date, genre_ids, poster_path, vote_average} = movie;
 
     return (
-        <div>
-            <div>title: {title}</div>
-            <div>genre_ids: {genre_ids}</div>
-            <Poster poster={movie.poster_path}/>
+        <div className={css.Movie}>
+            <Poster key={id} poster={poster_path} title={movie.title}/>
+            <div className={css.InfoMovie}>
+                <div className={css.TitleMovie}>{title}</div>
+                <div>{release_date}, {genre_ids}</div>
+                <Rating key={movie.id} rating={vote_average}/>
+            </div>
         </div>
     );
 };

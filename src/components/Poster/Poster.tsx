@@ -1,18 +1,19 @@
 import {FC} from 'react';
 import css from "./Poster.module.css";
-import {IPoster} from "../../interfaces";
-
+import {posterUrl} from "../../constants";
+import empty from '../../assets/images/empty.jpg';
 
 interface IProps {
     poster: string;
+    title: string;
 }
 
-const Poster: FC<IProps> = ({poster}) => {
-    const posterURL = 'https://image.tmdb.org/t/p/w500' + poster;
+const Poster: FC<IProps> = ({poster, title}) => {
+    const posterPath:string =  (posterUrl + poster);
 
     return (
-        <div>
-            <img className={css.PosterImage} src={posterURL} alt='empty'/>
+        <div className={css.Posters}>
+            <img className={css.PosterImage} src={posterPath || empty} alt={title}/>
         </div>
     );
 };

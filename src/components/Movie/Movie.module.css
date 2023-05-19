@@ -1,0 +1,19 @@
+.Movie {
+    border: 1px solid gray;
+    padding: 15px 20px;
+    border-radius: 25px;
+    color: bisque;
+    width: 300px;
+    height: 550px;
+}
+
+.TitleMovie {
+    color: snow;
+    overflow: hidden;
+    font-family: Georgia, serif;
+    font-size: 1.3em;
+}
+
+.InfoMovie {
+    padding-left: 0;
+}

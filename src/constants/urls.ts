@@ -8,7 +8,9 @@ const urls = {
     genreURL: '/genre/movie/list'
 }
 
-const setURLS = (url: string) => options.url = baseURL + url;
+const setURLS = (url: string):string => {
+    return options.url = (baseURL + url);
+}
 
 export {
     baseURL,

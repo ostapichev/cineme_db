@@ -1,0 +1,10 @@
+.Rating {
+    display: flex;
+    width: 25px;
+    height: 25px;
+}
+
+.StarRating {
+    width: 25px;
+    height: 25px;
+}

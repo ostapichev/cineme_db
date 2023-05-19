@@ -1,0 +1,42 @@
+.Pagination {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.HeaderPagination {
+    font-size: 3em;
+    font-family: Georgia, serif;
+    color: snow;
+}
+
+.ButtonPagination {
+    width: 150px;
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 20px;
+    background-color: #333; /* Цвет фона кнопки */
+    color: snow; /* Цвет текста кнопки */
+    font-size: 20px;
+    font-family: Georgia, serif;
+    cursor: pointer;
+}
+
+.Pagination .ButtonPagination:active {
+    background-color: #000; /* Цвет фона активной кнопки */
+    color: red;
+}
+
+.ButtonPagination:hover {
+    background-color: #444; /* Цвет фона при наведении на кнопку */
+    color: bisque;
+}
+
+.ButtonPagination:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
