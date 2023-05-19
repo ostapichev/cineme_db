@@ -1,6 +1,8 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 
 import {IMovie} from "../../interfaces";
+import {Poster} from "../Poster/Poster";
+
 
 
 interface IProps {
@@ -8,13 +10,14 @@ interface IProps {
 }
 
 const Movie: FC<IProps> = ({movie}) => {
-    const {id, title, genre_ids} = movie;
+    const {id, title, genre_ids, poster_path} = movie;
+    console.log(poster_path);
 
     return (
         <div>
             <div>title: {title}</div>
             <div>genre_ids: {genre_ids}</div>
-            <img></img>
+            <Poster poster={movie.poster_path}/>
         </div>
     );
 };

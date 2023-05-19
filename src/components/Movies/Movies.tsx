@@ -22,6 +22,7 @@ const Movies: FC = () => {
             .then(response => response.data)
             .then(response => dispatch(moviesAction.setMovies(response))
             )}, [query, dispatch]);
+    console.log(movies);
 
     return (
         <div>
