@@ -1,0 +1,13 @@
+.GenresPage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: linear-gradient(
+            190deg,
+            rgba(110,110,110,1) 0%,
+            rgba(53,51,71,1) 21%,
+            rgba(0,0,0,1) 100%
+    );
+    height: 93vh;
+}
+

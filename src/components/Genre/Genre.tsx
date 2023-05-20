@@ -1,6 +1,7 @@
 import {FC} from 'react';
 
 import {IGenre} from "../../interfaces";
+import css from './Genre.module.css';
 
 
 interface IProps {
@@ -9,11 +10,11 @@ interface IProps {
 
 const Genre: FC<IProps> = ({genre}) => {
     const {id, name} = genre;
+    console.log(genre)
 
     return (
         <div>
-            <div>id: {id}</div>
-            <div>name: {name}</div>
+            <button className={css.ButtonGenre}>{name}</button>
         </div>
     );
 };

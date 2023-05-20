@@ -19,20 +19,20 @@
     margin: 0 4px;
     border: none;
     border-radius: 20px;
-    background-color: #333; /* Цвет фона кнопки */
-    color: snow; /* Цвет текста кнопки */
+    background-color: #333;
+    color: snow;
     font-size: 20px;
     font-family: Georgia, serif;
     cursor: pointer;
 }
 
 .Pagination .ButtonPagination:active {
-    background-color: #000; /* Цвет фона активной кнопки */
+    background-color: #000;
     color: red;
 }
 
 .ButtonPagination:hover {
-    background-color: #444; /* Цвет фона при наведении на кнопку */
+    background-color: #444;
     color: bisque;
 }
 

@@ -1,0 +1,25 @@
+.GenresBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60vw;
+}
+
+.GenreHeader {
+    font-size: 3em;
+    font-family: Georgia, serif;
+    color: snow;
+}
+
+.BlockHeader {
+    display: flex;
+    justify-content: center;
+}
+
+.Logo {
+    display: flex;
+    justify-content: center;
+    transform: scale(2);
+    margin-top: 100px;
+}
+
