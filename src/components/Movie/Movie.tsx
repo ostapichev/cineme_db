@@ -17,8 +17,7 @@ const Movie: FC<IProps> = ({movie}) => {
     const filteredGenres: IGenre[] = genres.filter(genre => {
         return genre_ids.includes(genre.id);
     });
-    const genreNames: string[] = filteredGenres.map(genre => genre.name);
-    const genreString: string = genreNames.join(', ');
+    const genreNames: string = filteredGenres.map(genre => genre.name).join(', ');
 
     return (
         <div className={css.Movie}>
@@ -26,7 +25,7 @@ const Movie: FC<IProps> = ({movie}) => {
             <div className={css.InfoMovie}>
                 <div className={css.TitleMovie}>{title}</div>
                 <div>{release_date}</div>
-                <div className={css.ShowInfoMovie}>{genreString}</div>
+                <div className={css.ShowInfoMovie}>{genreNames}</div>
                 <Rating key={movie.id} rating={vote_average}/>
             </div>
         </div>
