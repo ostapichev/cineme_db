@@ -12,8 +12,11 @@ import css from './Movies.module.css';
 const Movies: FC = () => {
     const dispatch = useAppDispatch();
     const {movies} = useAppSelector((state) => state.movieReducer);
+
     const [query, setQuery] = useSearchParams();
 
+
+    console.log(movies)
     setURLS(urls.movieURL);
     useEffect(() => {
         setQuery( prev => ({...prev, page: '1'}));

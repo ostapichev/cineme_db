@@ -17,3 +17,7 @@
 .InfoMovie {
     padding-left: 0;
 }
+
+.ShowInfoMovie {
+    display: flex;
+}
