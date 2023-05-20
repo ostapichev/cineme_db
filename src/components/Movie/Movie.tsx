@@ -1,9 +1,13 @@
-import {FC} from 'react';
+import {FC, useEffect} from 'react';
 
-import {IMovie} from "../../interfaces";
+import {IGenre, IMovie} from "../../interfaces";
 import {Poster} from "../Poster/Poster";
 import {Rating} from "../Rating/Rating";
 import css from './Movie.module.css';
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {setURLS, urls} from "../../constants";
+import {genreService} from "../../services";
+import {genreActions} from "../../redux/slices";
 
 
 interface IProps {
@@ -12,6 +16,7 @@ interface IProps {
 
 const Movie: FC<IProps> = ({movie}) => {
     const {id, title, release_date, genre_ids, poster_path, vote_average} = movie;
+
 
     return (
         <div className={css.Movie}>
