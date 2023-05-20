@@ -1,10 +1,10 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 
 import {MainLayout} from "./layouts";
-import {GenresPage, HomePage, MoviesPage, ProfilePage} from "./pages";
+import {GenrePage, GenresPage, HomePage, MoviesPage, ProfilePage} from "./pages";
 
 
-function App() {
+const App = () => {
 
     return (
         <Routes>
@@ -13,6 +13,7 @@ function App() {
                 <Route path={'home'} element={<HomePage/>}/>
                 <Route path={'movies'} element={<MoviesPage/>}/>
                 <Route path={'genres'} element={<GenresPage/>}/>
+                <Route path={'genres/genre'} element={<GenrePage/>}/>
                 <Route path={'profile'} element={<ProfilePage/>}/>
             </Route>
         </Routes>

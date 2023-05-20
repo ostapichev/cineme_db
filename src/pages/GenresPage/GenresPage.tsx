@@ -1,7 +1,7 @@
 import {FC} from 'react';
 
 import {Genres} from "../../components";
-import css from './GenrePage.module.css';
+import css from './GenresPage.module.css';
 
 
 const GenresPage: FC = () => {
